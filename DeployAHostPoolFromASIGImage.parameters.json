@@ -21,10 +21,10 @@
 			"value": "latest"
 		},
 		"hostPoolName": {
-			"value": "demohp3"
+			"value": "demohp1"
 		},
 		"rdshNamePrefix": {
-			"value": "demoVM3"
+			"value": "demo1"
 		},
 		"rdshNumberOfInstances": {
 			"value": 2
