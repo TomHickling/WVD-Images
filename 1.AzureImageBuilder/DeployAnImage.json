@@ -1,5 +1,5 @@
 {
-	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"publisher": {
@@ -23,7 +23,7 @@
 		},
 		"ScriptUri": {
 			"type": "string",
-			"defaultValue": "https://raw.githubusercontent.com/Everink/AzureImageBuilder/master/Scripts/AzureImageBuilder.ps1",
+			"defaultValue": "https://raw.githubusercontent.com/TomHickling/WVD-Images/master/1.AzureImageBuilder/SetupGoldenImage.ps1",
 			"metadata": {
 				"description": "Location of powershell script to customize your image"
 			}
