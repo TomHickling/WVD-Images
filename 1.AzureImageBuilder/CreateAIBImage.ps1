@@ -1,7 +1,7 @@
 ﻿##Create a VM image using Azure Image Builder that we will later store in Shared IMage Gallery and deploy to a WVD Host Pool
 
 #Set Variables - Resource Group to deploy into and the ARM template we use later
-$RG = "RG2_EUS_AzureImageBuilder"
+$RG = "WVD_EUS_AzureImageBuilder"
 $TemplateUri = "https://raw.githubusercontent.com/TomHickling/WVD-Images/master/1.AzureImageBuilder/DeployAnImage.json"
 
 #Install AZ if not already installed and login
@@ -23,16 +23,17 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
 #Create a new Resource Group if not already existing
 New-AzResourceGroup -Name $RG -Location 'East US'
 #Provide "contributor" rights to the RG for the Service Principle
-New-AzRoleAssignment -RoleDefinitionName "Contributor" -ApplicationId "cf32a0cc-373c-47c9-9156-0db11f6a6dfc" -ResourceGroupName "RG2_EUS_AzureImageBuilder"
+New-AzRoleAssignment -RoleDefinitionName "Contributor" -ApplicationId "cf32a0cc-373c-47c9-9156-0db11f6a6dfc" -ResourceGroupName "$RG"
 
 #Start Image Deployment
 #Build Image Template
 New-AzResourceGroupDeployment -ResourceGroupName $RG -TemplateUri $TemplateUri -OutVariable Output -Verbose
-#Check Name of Image Template. In the Azure portal seelct "Show hidden types" in the RG
+
+#Check Name of Image Template. In the Azure portal select "Show hidden types" in the RG
 $Output.Outputs["imageTemplateName"].Value
 #Build the Golden Image
 $ImageTemplateName = $Output.Outputs["imageTemplateName"].Value
 Invoke-AzResourceAction -ResourceGroupName $RG -ResourceType Microsoft.VirtualMachineImages/imageTemplates -ResourceName $ImageTemplateName -Action Run
 
-#Check Build Process - Will say "Building". Once complete there will be an Image in the resource Group
+#Check Build Process - Will say "Building" for awhile (about 20 mins) and then "Distributing"(for about 2 mins). Once complete there will be an Image in the resource Group
 (Get-AzResource -ResourceGroupName $RG -ResourceType Microsoft.VirtualMachineImages/imageTemplates -Name $ImageTemplateName).Properties.lastRunStatus
