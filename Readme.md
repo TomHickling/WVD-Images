@@ -1,4 +1,4 @@
-# Azure Image Builder (AIB) and Shared Image Gallery (SIG) Templates
+# Azure Image Builder (AIB) and Shared Image Gallery (SIG) Templates for WVD
 
 ### This template will create a Windows 10 Image that will then be distributed to Azure Shared Image Gallery that can then be used to build a WVD Host Pool from.
 
