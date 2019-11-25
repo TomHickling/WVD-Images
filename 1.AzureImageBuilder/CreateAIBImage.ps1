@@ -1,7 +1,7 @@
 ﻿##Create a VM image using Azure Image Builder that we will later store in Shared IMage Gallery and deploy to a WVD Host Pool
 
 #Set Variables - Resource Group to deploy into and the ARM template we use later
-$RG = "WVD_EUS_AzureImageBuilder"
+$RG = "WVD_EUS_AzureImageBuilder2"
 $TemplateUri = "https://raw.githubusercontent.com/TomHickling/WVD-Images/master/1.AzureImageBuilder/DeployAnImage.json"
 
 #Install AZ if not already installed and login
@@ -29,7 +29,7 @@ New-AzRoleAssignment -RoleDefinitionName "Contributor" -ApplicationId "cf32a0cc-
 #Build Image Template
 New-AzResourceGroupDeployment -ResourceGroupName $RG -TemplateUri $TemplateUri -OutVariable Output -Verbose
 
-#Check Name of Image Template. In the Azure portal select "Show hidden types" in the RG
+#Check Name of Image Template. In the Azure portal select "Show hidden types" in the $RG RG
 $Output.Outputs["imageTemplateName"].Value
 #Build the Golden Image
 $ImageTemplateName = $Output.Outputs["imageTemplateName"].Value
