@@ -1,0 +1,1 @@
+## This jsut create an Azure Image Builder Image
