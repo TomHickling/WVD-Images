@@ -1,6 +1,6 @@
 ### Azure Image Builder and Shared Image Gallery templates
 
-This template will create a Windows 10 Image that can be used to build a VM from.
+# This template will create a Windows 10 Image that can be used to build a VM from.
 
 In conjunction with 2.SharedImageGallery it will distribute the image to a new Shared Image gallery and then you can create a host pool from this.
 
