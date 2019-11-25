@@ -1,6 +1,12 @@
 # Azure Image Builder and Shared Image Gallery templates
 
-### This template will create a Windows 10 Image that can be used to build a VM from.
+### This template will create a Windows 10 Image that will then be distributed to Azure Shared Image Gallery that can then be used to build a WVD Host Pool from.
+
+There are two templates. The first is in the 1.AzureImageBuilder folder called DeployAnImage.json. Run this using CreateAIBImage.ps1
+- This will Register Azure Image Builder (AIB) as it is currently in preview.
+- Create a Resource group and provide AIB with permissions to it
+- Then deploy an Windows 10 multi Session Image template and finally the actual image.
+- It uses SetupGoldenImage.ps1 to install software into the Image - modify this for the software you want
 
 In conjunction with 2.SharedImageGallery it will distribute the image to a new Shared Image gallery and then you can create a host pool from this.
 
