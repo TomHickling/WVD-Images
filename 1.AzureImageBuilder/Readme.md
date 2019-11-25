@@ -1,1 +1,1 @@
-## This jsut create an Azure Image Builder Image
+## This just creates an Azure Image Builder Image
