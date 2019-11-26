@@ -3,7 +3,7 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"_artifactsLocation": {
-			"value": "https://raw.githubusercontent.com/TomHickling/RDS-Templates/tree/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/"
+			"value": "https://raw.githubusercontent.com/Everink/RDS-Templates/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/"
 		},
 		"rdshImageSource": {
 			"value": "SharedImageGallery"
@@ -18,7 +18,7 @@
 			"value": "WVD_ImageDefinition"
 		},
 		"SharedImageGalleryVersionName": {
-			"value": "latest"
+			"value": "0.24029.6586"
 		},
 		"hostPoolName": {
 			"value": "demohp"
@@ -27,7 +27,7 @@
 			"value": "demohpVM"
 		},
 		"rdshNumberOfInstances": {
-			"value": 2
+			"value": 1
 		},
 		"rdshVmSize": {
 			"value": "Standard_D2s_v3"
