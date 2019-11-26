@@ -3,7 +3,7 @@
 #Setup some variables: $ResourceGroupName is for the Shared Image Gallery, $AIBRG is the RG that already exists and has your AIB Image in it and $HPRG is the WVD host pool RG
 $ResourceGroupName = "WVD_EUS_SharedImageGallery"
 $AIBRG = "WVD_EUS_AzureImageBuilder"
-$HPRG = "WVD_NEU-HP1"
+$HPRG = "WVD_NEU-HP2"
 $SIG = "WVD_Gallery"
 $Def = "WVD_ImageDefinition"
 #Either use this for Local template
@@ -53,7 +53,7 @@ Invoke-AzResourceAction -ResourceGroupName $AIBRG -ResourceType Microsoft.Virtua
 New-AzResourceGroup -Name $HPRG -Location NorthEurope
 #Create Shared Image Gallery
 #Either Local
-New-AzResourceGroupDeployment -ResourceGroupName $hprg -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -Verbose
+# New-AzResourceGroupDeployment -ResourceGroupName $hprg -TemplateFile $TemplateFile -TemplateParameterFile $TemplateParameterFile -Verbose
 #OR Github
 New-AzResourceGroupDeployment -ResourceGroupName $hprg -TemplateURI $TemplateURI -TemplateParameterUri $TemplateParameterURI -Verbose
 
