@@ -18,13 +18,13 @@
 			"value": "WVD_ImageDefinition"
 		},
 		"SharedImageGalleryVersionName": {
-			"value": "0.24029.6586"
+			"value": "latest"
 		},
 		"hostPoolName": {
-			"value": "demohp"
+			"value": "demohp1"
 		},
 		"rdshNamePrefix": {
-			"value": "demohpVM"
+			"value": "demohpVM1"
 		},
 		"rdshNumberOfInstances": {
 			"value": 1
