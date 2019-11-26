@@ -1,0 +1,94 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"_artifactsLocation": {
+			"value": "https://raw.githubusercontent.com/Everink/RDS-Templates/master/wvd-templates/Create%20and%20provision%20WVD%20host%20pool/"
+		},
+		"rdshImageSource": {
+			"value": "SharedImageGallery"
+		},
+		"SharedImageGalleryResourceGroup": {
+			"value": "WVD_EUS_SharedImageGallery"
+		},
+		"SharedImageGalleryName": {
+			"value": "WVD_Gallery"
+		},
+		"SharedImageGalleryDefinitionName": {
+			"value": "WVD_ImageDefinition"
+		},
+		"SharedImageGalleryVersionName": {
+			"value": "latest"
+		},
+		"hostPoolName": {
+			"value": "demohp1"
+		},
+		"rdshNamePrefix": {
+			"value": "demohpVMx"
+		},
+		"rdshNumberOfInstances": {
+			"value": 1
+		},
+		"rdshVmSize": {
+			"value": "Standard_D2s_v3"
+		},
+		"rdshVMDiskType": {
+			"value": "Premium_LRS"
+		},
+		"domainToJoin": {
+			"value": "mycitrixcloud.com"
+		},
+		"existingDomainUPN": {
+			"value": "domainjoin@mycitrixcloud.com"
+		},
+		"existingDomainPassword": {
+			"reference": {
+				"keyVault": {
+					"id": "/subscriptions/7c793f65-5192-45b9-862f-698414ecf392/resourcegroups/Keyvault/providers/Microsoft.KeyVault/vaults/Toms-KeyVault"
+				},
+				"secretName": "Domainjoin-Password"
+			}
+		},
+		"ouPath": {
+			"value": "OU=WVD,DC=mycitrixcloud,DC=com"
+		},
+		"existingVnetName": {
+			"value": "Dublin-vNet"
+		},
+		"existingSubnetName": {
+			"value": "WVD-Subnet"
+		},
+		"virtualNetworkResourceGroupName": {
+			"value": "Citrix-Dublin"
+		},
+		"rdBrokerURL": {
+			"value": "https://rdbroker.wvd.microsoft.com"
+		},
+		"existingTenantGroupName": {
+			"value": "Microsoft Internal"
+		},
+		"existingTenantName": {
+			"value": "thhickli"
+		},		
+		"defaultDesktopUsers": {
+			"value": "tom@mycitrixcloud.onmicrosoft.com"
+		},
+		"tenantAdminUpnOrApplicationId": {
+			"value": "wvd@mycitrixcloud.onmicrosoft.com"
+		},
+		"TenantAdminPassword": {
+			"reference": {
+				"keyVault": {
+					"id": "/subscriptions/7c793f65-5192-45b9-862f-698414ecf392/resourcegroups/Keyvault/providers/Microsoft.KeyVault/vaults/Toms-KeyVault"
+				},
+				"secretName": "TenantAdmin-Password"
+			}
+		},
+		"isServicePrincipal": {
+			"value": false
+		},
+		"aadTenantId": {
+			"value": "8191ebc4-5e75-4522-8ca4-8991fab98bfb"
+		}
+	}
+}
