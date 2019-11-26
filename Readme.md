@@ -21,5 +21,5 @@ This will build an Image in the Shared Image Gallery
   https://raw.githubusercontent.com/TomHickling/WVD-Images/master/DeployAHostPoolFromASIGImage.json 
   which uses the parameters in:
   https://raw.githubusercontent.com/TomHickling/WVD-Images/master/DeployAHostPoolFromASIGImage.parameters.json 
-  which you can set to your settings relevant to your WVD tenant. This is all of the WVD host pool questions that need to be answered if    you were deploying a host pool from the Marketplace.
+  which you can set to your settings relevant to your WVD tenant and existing Shared Image gallery specific detials. This is all of the WVD host pool questions that need to be answered if    you were deploying a host pool from the Marketplace.
 
