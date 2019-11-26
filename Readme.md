@@ -3,7 +3,7 @@
 ### These two templates will create a Windows 10 Image that will then be distributed to Azure Shared Image Gallery that can then be used to build a WVD Host Pool from.
 
 There are two templates. The first is in the 1.AzureImageBuilder folder called DeployAnImage.json. Run this template by using CreateAIBImage.ps1.
-- This will Register Azure Image Builder as it is currently in preview.
+- This will Register Azure Image Builder as it is currently in preview. (You will need to remove the comments)
 - Create a Resource group and provide AIB with permissions to it. Set your Resource Group in the variables section.
 - Then deploy an Windows 10 multi Session Image template.
 - It calls SetupGoldenImage.ps1 to install software into the Image - modify this for the software you want to install.
