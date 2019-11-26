@@ -17,7 +17,8 @@ This will build an Image in the Shared Image Gallery
 - Create a Shared Image Gallery in that RG
 - Create an Image Definition in that Gallery
 - Assign AIB rights to the SIG RG in order to distribute to it
-- It will then create an new image and distribute to the SIG
+- It will then create an new image defintion and distribute to the SIG using https://raw.githubusercontent.com/TomHickling/WVD-Images/master/2.SharedImageGallery/DistributeAnImageToSIG.json. In here you can specify the name of the AIB Image name as well as specifying the Azure regions that you want to replicate the image to so that it can be used in the WVD host pool deployment.
+- It will then commence the Image build
 - It will then create a WVD host pool by calling
   https://raw.githubusercontent.com/TomHickling/WVD-Images/master/DeployAHostPoolFromASIGImage.json 
   which uses the parameters in:
