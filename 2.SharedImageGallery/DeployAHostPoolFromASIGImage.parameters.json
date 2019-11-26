@@ -24,7 +24,7 @@
 			"value": "demohp1"
 		},
 		"rdshNamePrefix": {
-			"value": "demohpVM1"
+			"value": "demohpVMx"
 		},
 		"rdshNumberOfInstances": {
 			"value": 1
